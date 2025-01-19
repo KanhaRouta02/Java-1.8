@@ -8,11 +8,11 @@ About the Course 📚
 
 • Java creators wanted to introduce the Functional features such as:
 
-• Lambdas
+     • Lambdas
 
-• Streams
+     • Streams
 
-• Optional and etc.,
+     • Optional and etc.,
 
 • Technological advancements with the mobile/laptops/systems.
 
