@@ -1,0 +1,139 @@
+1. Lambda Expressions
+What is a lambda expression in Java?
+How do you define a lambda expression?
+Explain the syntax of a lambda expression.
+What are the advantages of using lambda expressions?
+Can lambda expressions capture local variables? Explain.
+What are effectively final variables in lambda expressions?
+Write a lambda expression to sort a list of strings.
+How do you pass a lambda expression to a method?
+Can a lambda expression have multiple parameters?
+What is the type of a lambda expression?
+Can lambda expressions throw exceptions? How?
+How does lambda support improve functional programming in Java?
+How can you debug lambda expressions in Java?
+Can you write a lambda that uses this keyword? What does it refer to?
+Explain how method references relate to lambda expressions.
+Write a lambda to calculate the sum of integers in a list.
+Can you use lambda expressions to implement Runnable or Callable interfaces?
+Write a lambda expression to filter a list of strings based on length.
+What happens when you try to modify a variable captured in a lambda?
+Compare lambda expressions with anonymous classes.
+2. Functional Interfaces
+
+What is a functional interface in Java?
+Name some built-in functional interfaces in Java 8.
+Explain the purpose of the @FunctionalInterface annotation.
+How is Predicate<T> used in Java 8?
+What is the use of Function<T, R> functional interface?
+What is the difference between Consumer<T> and Supplier<T>?
+Explain the BiFunction functional interface with an example.
+Can a functional interface have static methods? Provide an example.
+What is the role of UnaryOperator and BinaryOperator interfaces?
+How can you use BiConsumer to process key-value pairs?
+Is Comparator a functional interface? Why?
+Write a custom functional interface and use it with a lambda expression.
+What is the difference between Function and BiFunction?
+Explain the default method in functional interfaces.
+What happens if you add an abstract method to a functional interface?
+What is the purpose of IntConsumer, DoubleConsumer, and similar interfaces?
+How do you use Optional with functional interfaces like Function or Predicate?
+What is the purpose of ToIntFunction<T>?
+Can a functional interface extend another interface?
+How do functional interfaces improve the flexibility of APIs?
+3. Streams API
+What is the Streams API in Java 8?
+How does Streams API differ from Collections API?
+What is the difference between intermediate and terminal operations in streams?
+Explain the use of the filter() method in streams.
+How can you use the map() function in streams?
+What is the purpose of flatMap() in streams?
+How do you collect the result of a stream into a collection?
+What is the difference between findFirst() and findAny()?
+How do you count the number of elements in a stream?
+What is the difference between limit() and skip() methods in streams?
+How do you sort elements in a stream?
+What is the purpose of the reduce() method in streams?
+Explain the concept of short-circuiting in streams.
+What is the use of forEach() in streams?
+Can you convert a stream back to a list or array?
+How does the peek() method work in streams?
+What is the purpose of the distinct() method in streams?
+Explain how parallelStream() works.
+How can you debug streams pipeline operations?
+What is the difference between sequential and parallel streams?
+4. Optional Class
+What is Optional in Java 8?
+How do you create an Optional object?
+What is the purpose of isPresent() method in Optional?
+How does orElse() differ from orElseGet()?
+What is the purpose of ifPresent() method in Optional?
+Can Optional contain null values?
+How do you handle Optional when the value might be absent?
+What is the use of map() in Optional?
+Explain flatMap() in the context of Optional.
+How do you throw an exception with orElseThrow() in Optional?
+What is the difference between orElse() and orElseThrow()?
+How can Optional help avoid NullPointerException?
+Can you use Optional with streams? Provide an example.
+Why is it discouraged to use Optional as method parameters?
+How do you handle nested Optional values?
+What is the purpose of filter() in Optional?
+How do you convert an Optional to a stream?
+Can you use Optional with primitive types?
+Is Optional serializable?
+What is the default behavior of Optional.empty()?
+5. Date and Time API
+What are the key classes in the Date-Time API of Java 8?
+How is LocalDate different from LocalDateTime?
+How do you create an immutable date in Java 8?
+What is ZonedDateTime in Java 8?
+How can you parse a date string using DateTimeFormatter?
+What is the purpose of Instant in Java 8?
+How do you calculate the difference between two dates?
+Explain the use of Period and Duration.
+What is the role of ZoneId in the Date-Time API?
+How do you add days to a LocalDate?
+How does Clock work in Java 8 Date-Time API?
+How can you format a LocalDateTime into a specific pattern?
+How do you handle leap years with Java 8 Date-Time API?
+What is the difference between OffsetDateTime and ZonedDateTime?
+Can you convert Date to LocalDateTime? How?
+How do you create a LocalTime object?
+What is the use of TemporalAdjuster?
+How do you set a specific time zone for ZonedDateTime?
+How is YearMonth used in the Date-Time API?
+Can you compare dates using Java 8 Date-Time API?
+6. Miscellaneous
+What is the difference between Iterable.forEach() and Stream.forEach()?
+How do you create an infinite stream?
+What is the use of Collectors.toList()?
+What is the default method in interfaces introduced in Java 8?
+How do you override a default method in an interface?
+Explain the purpose of static methods in interfaces.
+How do you combine two predicates in Java 8?
+What is Spliterator in Java 8?
+How does Spliterator differ from Iterator?
+Explain the role of the DoubleStream class.
+What is the purpose of IntStream and LongStream?
+How do you iterate over a range of numbers using streams?
+What is the purpose of Collectors.groupingBy()?
+Explain Collectors.partitioningBy() with an example.
+How do you join strings using Collectors.joining()?
+What is the difference between Stream.of() and Arrays.stream()?
+What is the purpose of CompletableFuture in Java 8?
+How do you use CompletableFuture for asynchronous programming?
+How can you chain multiple CompletableFuture calls?
+Explain the concept of backpressure in reactive streams.
+7. Advanced Concepts
+
+How do you handle parallelism in streams?
+What are the trade-offs of using parallel streams?
+How does the Streams API use internal iteration?
+Can you modify the source of a stream while iterating?
+What is the difference between stateful and stateless operations in streams?
+How do you implement custom collectors?
+What is the use of Collectors.mapping()?
+How do you use Collectors.reducing()?
+Explain lazy evaluation in streams.
+How do you implement a stream pipeline with multiple filters?

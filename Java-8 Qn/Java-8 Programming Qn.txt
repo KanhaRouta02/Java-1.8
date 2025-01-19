@@ -1,0 +1,67 @@
+Lambda Expressions
+Write a lambda expression to calculate the square of a number.
+Sort a list of strings in descending order using a lambda expression.
+Filter a list of integers to retain only even numbers using a lambda.
+Implement a custom Runnable using a lambda expression.
+Write a lambda expression to concatenate two strings.
+Use a lambda to implement a custom comparator for sorting employees by their salary.
+Write a lambda to check if a string starts with a specific character.
+Create a BiFunction to multiply two integers.
+Write a lambda to find the maximum of two numbers.
+Use a lambda to create a thread that prints numbers from 1 to 10.
+Streams API
+Convert a list of strings to uppercase using the map() function in streams.
+Find the first element in a list of integers greater than 10 using streams.
+Calculate the sum of squares of all integers in a list using streams.
+Sort a list of employees by their age using streams.
+Find the count of distinct elements in a list using streams.
+Filter out null values from a list using streams.
+Flatten a list of lists into a single list using flatMap().
+Find the average of a list of integers using streams.
+Collect all even numbers from a list into a Set using streams.
+Group a list of strings by their length using Collectors.groupingBy().
+Optional
+Write a program to return a default value if an Optional is empty.
+Use Optional.map() to transform an optional value.
+Write a program to handle nested Optional values using flatMap().
+Use Optional to safely extract a property of an object.
+Implement a function that throws a custom exception when an Optional is empty.
+Date and Time API
+Create a program to get the current date and time using LocalDateTime.
+Parse a date string ("2025-01-05") into a LocalDate object.
+Add 10 days to the current date using LocalDate.
+Find the difference in days between two dates using ChronoUnit.
+Format the current date into the pattern dd-MM-yyyy.
+Create a program to get the last day of the current month.
+Convert LocalDate to LocalDateTime by setting a specific time.
+Calculate the duration between two times using Duration.
+Find whether a given year is a leap year using Year.
+Display the current time in a specific time zone using ZonedDateTime.
+Functional Interfaces
+Write a custom functional interface for adding two integers.
+Use Predicate to filter out strings shorter than 5 characters.
+Implement a Function to calculate the factorial of a number.
+Use BiConsumer to process a map of student names and their grades.
+Create a Supplier that generates a random UUID.
+Use UnaryOperator to double the value of a list of integers.
+Implement a BinaryOperator to find the greater of two numbers.
+Write a Consumer to print each element of a list.
+Use IntFunction to return the square of a number.
+Create a Comparator using a lambda expression for sorting strings by length.
+Advanced Streams
+Create an infinite stream of numbers starting from 1.
+Use reduce() to calculate the product of all elements in a list.
+Partition a list of integers into odd and even using Collectors.partitioningBy().
+Write a program to find the second largest number in a list using streams.
+Use Collectors.joining() to concatenate all strings in a list with commas.
+Write a program to find the longest string in a list using streams.
+Collect all prime numbers from a range into a list using streams.
+Implement a program to find the frequency of each character in a string using streams.
+Use Stream.of() to create a stream of custom objects.
+Find the top 3 highest salaries from a list of employees using streams.
+Miscellaneous
+Implement a program to parallelize stream operations for performance.
+Use Collectors.toMap() to convert a list of objects into a map.
+Create a program to skip the first 3 elements in a stream.
+Write a program to find the nth Fibonacci number using streams.
+Use peek() to debug a stream pipeline and print intermediate results.
