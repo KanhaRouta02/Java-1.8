@@ -65,3 +65,59 @@ Use Collectors.toMap() to convert a list of objects into a map.
 Create a program to skip the first 3 elements in a stream.
 Write a program to find the nth Fibonacci number using streams.
 Use peek() to debug a stream pipeline and print intermediate results.
+Basic Operation
+---------------
+Find all students with a specific activity (e.g., "Cricket").
+Filter students who have more than 1 activity.
+Get a list of all student names.
+Get a list of unique activities across all students.
+Count the number of students living in a specific city (e.g., "New York").
+Mapping and Reducing
+--------------------
+Find the student with the highest roll number.
+Find the student with the lowest roll number.
+Create a comma-separated string of all student names.
+Calculate the total number of activities across all students.
+Find the sum of all roll numbers.
+Grouping and Partitioning
+------------------------
+Group students by the city they live in.
+Group students by the number of activities they are involved in.
+Partition students into two groups: those with more than 2 activities and those with 2 or fewer.
+Group students by the first letter of their name.
+Partition students into two groups based on whether their email contains "example.com".
+Sorting
+-------
+Sort students by their roll number in ascending order.
+Sort students by their name in descending order.
+Sort students by the number of activities they participate in.
+Sort students first by city and then by name.
+Advanced Stream Operations
+--------------------------
+Find the first student whose name starts with 'A'.
+Check if any student has "Basketball" as one of their activities.
+Check if all students have an email address.
+Check if no student lives in "Miami".
+Get a list of students who participate in both "Cricket" and "Football".
+Get the student with the longest name.
+===================================================================================================================
+Remove duplicate characters from a string.
+Count the frequency of each character in a string.
+Check if a string contains only digits.
+Check if a string starts with a specific character.
+Find the sum of all numbers in a list.
+Find the average of all numbers in a list.
+Find the maximum number in a list.
+Find the minimum number in a list.
+Count the number of even numbers in a list.
+Count the number of odd numbers in a list.
+Find all prime numbers in a list.
+Check if all numbers in a list are positive.
+Check if any number in a list is negative.
+Sort numbers in ascending order.
+Group numbers by even and odd.
+Partition numbers into positive and negative.
+Sort numbers in descending order.
+Find the second largest number in a list.
+Group numbers by even and odd.
+Partition numbers into positive and negative.
