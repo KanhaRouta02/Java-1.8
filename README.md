@@ -226,7 +226,109 @@ Invalid:
 
     Student student = Student::new; // compilation issue
 
+➡️Lambdas and Local Variables
+------------------------------
 
+What is a Local variable ❓
+
+• Any variable that is declared inside a method is called a local variable. 
+
+• Lambdas have some restrictions on using local variables 👉 
+
+        • Not allowed to use the same the local variable name as lambda parameters or inside the lambda body.
+        
+        • Not allowed re-assign a value to a local variable.
+
+• No restrictions on instance variables.
+
+Local Variables – Not Allowed
+----------------------------
+
+   ➡️Repeated Variable Name :
+
+• Variable i is declared in the same scope and used as a parameter in Lambda.
+
+• You cannot use the same variable as a lambda parameter or inside the lambda body.
+
+   Same Variable as Input 👉 :
+
+        int i=0; //Repeated varibale name not allowed
+        Consumer<Integer> c1 = (i) -> {
+        System.out.println(i+value);
+        };
+
+  Same Variable as Lambda parameter 👉 :
+
+       int i=0;
+       Consumer<Integer> c1 = (i) -> { //Repeated variable name not allowed
+       System.out.println(i+value); 
+       };
     
-    
+  Same Variable in Lambda Body 👉 :
+
+      int i=0;
+      Consumer<Integer> c1 = (a) -> {
+      int i=0; //Repeated variable name not allowed
+      System.out.println(i+value);
+      };
+• Not allowed to modify the value inside the lamda
+
+     int value =4;
+     Consumer<Integer> c1 = (a) -> {
+         value=6; //reassigning not allowed
+         System.out.println(i+value);
+     };
+
+✅ Effectively Final   
+---------------------
+
+• Lambda’s are allowed to use local variables but not allowed to modify it even though they are not declared final. This concept is called 
+
+  Effectively Final.
+
+• Not allowed to modify the value inside the lamda
+
+         int value =4; Consumer<Integer> c1 = (a) -> {
+         value=6; //reassigning not allowed 
+         System.out.println(i+value);
+         };
+         
+• Prior to Java 8 , any variable that’s used inside the anonymous class should be declared final.  
+
+Advantages of Effectively Final :
+---------------------------------
+
+• Easy to perform concurrency operations.
+
+• Promotes Functional Programming and demotes the Imperative style programming.
+
+✅ Introduction to Streams API:
+-------------------------------
+
+• Introduced as part of Java8.
+
+• Main purpose is to perform some Operation on Collections.
+
+• Parallel operations are easy to perform with Streams API without having to spawn a multiple threads.
+
+• Streams API can be also used with arrays or any kind of I/O.
+
+What is a Stream ❓
+-------------------
+
+• Stream is a sequence of elements which can be created out of a collections such as List or Arrays or any kind of I/O resources and etc., 
+
+     List<String> names = Arrays.asList("adam","dan","jenny");
+     names.stream(); // creates a stream
+
+ • Stream operations can be performed either sequentially or parallel. 
+
+       names.parallelStream(); // creates a parallel stream
+
+How Stream API Works ❓  
+----------------------
+
+![image](https://github.com/user-attachments/assets/43fcfad0-e4e3-44e0-97ee-b4ffa50c782a)
+
+
 
