@@ -67,6 +67,18 @@ Example:
                                  Example 1
                      Sum of 100 numbers from 0 to 100
 
+                      /* Imperative Style of Programming - How style of programming */
+                       int sum = 0;
+                       for (int i = 1; i <= 100; i++) {
+                       sum += i;
+                       }
+                       System.out.println("Imperative Style of Programming : " + sum); // 5050
+
+                       /* Declarative Style of Programming - What style of programming */
+                       int sum1 = IntStream.rangeClosed(0, 100)
+                       .sum();
+                       System.out.println("Declarative Style of Programming : " + sum1); //5050
+
 ➡️Imperative vs Declarative Programming
 -------------------------------------
 
