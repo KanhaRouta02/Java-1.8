@@ -98,7 +98,7 @@ What is Lambda Expression❓
 
   Lambda Expression: 
 
-                  ![image](https://github.com/user-attachments/assets/410243b3-db3e-40c1-91b7-bdba0f0836ec)
+[image](https://github.com/user-attachments/assets/410243b3-db3e-40c1-91b7-bdba0f0836ec)
 
  ✅Usages of Lambda
  ------------------
@@ -225,6 +225,7 @@ Example:
 Invalid: 
 
     Student student = Student::new; // compilation issue
+
 
     
     
