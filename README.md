@@ -1,9 +1,7 @@
 About the Course 📚                                                                         
 ================
 
-                       ✍️ By KANHA 
-                       
-   ![StandingOvationGIF](https://github.com/user-attachments/assets/b0259938-c435-4401-859f-c6c7528e7d45)
+                       ✍️ By KANHA
 
                        
 ✅ Why Java 8 ?
@@ -881,9 +879,9 @@ Example:
 • format - Converting a LocalDate/LocalTime/LocalDateTime to a String.
      
      
-                                                                            ✍️ By KANHA                                   
+                                                         ✍️ By KANHA                                   
 
 
-      
+  ![StandingOvationGIF](https://github.com/user-attachments/assets/b0259938-c435-4401-859f-c6c7528e7d45)      
      
      
