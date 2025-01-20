@@ -1,6 +1,8 @@
-About the Course 📚                                                                    ✍️ By KANHA     
+About the Course 📚                                                                         
 ================
 
+                       ✍️ By KANHA
+                       
 ✅ Why Java 8 ?
 ----------------
 
