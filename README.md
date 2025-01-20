@@ -1,7 +1,9 @@
 About the Course 📚                                                                         
 ================
 
-                       ✍️ By KANHA ![StandingOvationGIF](https://github.com/user-attachments/assets/b0259938-c435-4401-859f-c6c7528e7d45)
+                       ✍️ By KANHA 
+                       
+   ![StandingOvationGIF](https://github.com/user-attachments/assets/b0259938-c435-4401-859f-c6c7528e7d45)
 
                        
 ✅ Why Java 8 ?
