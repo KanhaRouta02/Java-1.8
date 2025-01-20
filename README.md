@@ -98,7 +98,7 @@ What is Lambda Expression❓
 
   Lambda Expression: 
 
-[image](https://github.com/user-attachments/assets/410243b3-db3e-40c1-91b7-bdba0f0836ec)
+![image](https://github.com/user-attachments/assets/35c21dff-6ece-40f8-87e7-592c9847bc0a)
 
  ✅Usages of Lambda
  ------------------
