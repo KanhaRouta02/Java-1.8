@@ -330,5 +330,91 @@ How Stream API Works ❓
 
 ![image](https://github.com/user-attachments/assets/43fcfad0-e4e3-44e0-97ee-b4ffa50c782a)
 
+➡️Stream API : map()
+---------------------
+
+• map : Convert(transform) one type to another.
+
+• Don’t get confused this with Map Collection. 
+
+![image](https://github.com/user-attachments/assets/edcd1d74-f782-42cc-ac32-932d2d123f9e)
+
+➡️Stream API : flatMap()
+-------------------------
+
+• flatMap : Converts(Transforms) one type to another as like map() method.
+
+• Used in the context of Stream where each element in the stream represents multiple elements.
+
+Example:
+
+• Each Stream element represents multiple elements.
+
+     • Stream<List>
+     • Steam<Arrays>
+
+➡️Stream API – distinct() , count() and sorted()
+------------------------------------------------
+
+• distinct – Returns a stream with unique elements.
+
+• count – Returns a long with the total no of elements in the Stream.
+
+• sorted - Sort the elements in the stream.
+
+➡️Stream API – filter()
+-------------------------
+
+• filter – filters the elements in the stream.
+
+Input to the filter is a Predicate Functional Interface.
+
+➡️Streams API - reduce()
+------------------------
+
+• reduce – This is a terminal operation. Used to reduce the contents of a stream to a single value.
+
+• It takes two parameters as an input.
+
+     • First parameters – default or initial value
+     • Second Parameter – BinaryOperator<T>
+
+➡️Stream API : Max/Min using reduce()
+--------------------------------------
+
+• max -> Maximum(largest) element in the stream.
+
+• min -> Minimum(smallest) element in the stream.
+
+➡️Stream API : limit() and skip() 
+----------------------------------
+
+• These two function helps to create a sub-stream.
+
+• limit(n) – limits the “n” numbers of elements to be processed in the stream.
+
+• skip(n) – skips the “n” number of elements from the stream.
+
+➡️Streams API : anyMatch(), allMatch(), noneMatch()
+---------------------------------------------------
+
+• All these functions takes in a predicate as an input and returns a Boolean as an output.
+
+• anyMatch()- Returns true if any one of the element matches the predicate, otherwise false.
+
+• allMatch() - Returns true if all the element in the stream matches the predicate, otherwise false.
+
+• noneMatch() – Just opposite to allMatch(). Returns true if none of the element in the stream matches the predicate, otherwise false.
+
+➡️Streams API : findFirst() and findAny()
+-----------------------------------------
+
+• Used to find an element in the stream.
+
+• Both the functions returns the result of type Optional.
+
+• findFirst() – Returns first element in the stream.
+
+• findAny() – Returns the first encountered element in the stream.
 
 
