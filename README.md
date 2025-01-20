@@ -417,4 +417,468 @@ Input to the filter is a Predicate Functional Interface.
 
 • findAny() – Returns the first encountered element in the stream.
 
+✅Streams API - Short Circuiting
+====================================
 
+What is Short Circuiting ❓
+----------------------------
+
+Examples of Short Circuiting:
+
+Example 1:
+
+    if(boolean1 && boolean2){ //AND
+      //body
+     }
+     
+• If the first expression evaluates to false then the second expression wont even execute. 
+
+Example 2: 
+
+    if(boolean1 || boolean2){ //OR
+      //body
+     }
+
+• If the first expression evaluates to true then the second expression wont even execute.
+
+
+![image](https://github.com/user-attachments/assets/436b3837-5d00-4276-8ae8-7a0e9352af43)
+
+• All these functions does not have to iterate the whole stream to evaluate the result.
+
+Streams API : Stateful vs Stateless 👉
+
+• Does Streams have an internal state❓ Yes ✅
+
+• Does all the Stream functions maintain an internal state❓ No ❌
+
+✅Intermediate Operations
+-----------------------
+
+• Stateful functions
+
+     • distinct()
+     • sorted()
+     • skip()
+     • limit()
+
+Example : 
+
+     Convert List<Student> to List<String>
+     public static List<String> printUniqueStudentActivities() {
+      List<String> studentActivities = StudentDataBase.getAllStudents() .stream()
+      .map(Student::getActivities)
+      .flatMap(List::stream)
+      .distinct() // needs the state of the previously processed elements
+      .sorted() 
+      .collect(toList()); 
+      return studentActivities;
+     }
+ 
+      
+     
+• Stateless functions
+
+     • map()
+     • filter(), etc.,
+
+ Example : 
+
+      private static List<String> namesUpperCase(List<Student> names){
+      List<String> namesUpperCase = names.stream() //Stream<Student>
+      .map(Student::getName) //Stream<String> - stateless
+      .map(String::toUpperCase) // Stream<String> -> UpperCase - stateless
+      .collect(toList()); // returns List - stateless
+      return namesUpperCase;
+     }
+
+✅Streams API – Factory methods
+---------------------------------
+
+     • Of()
+     • generate()
+     • iterate()
+
+➡️Streams API – of(), iterate() and generate()
+-----------------------------------------------
+
+• Of() -> Creates a stream of certain values passed to this method.
+
+Example:
+
+     Stream<String> stringStream = Stream.of(“adam”,”dan”,”Julie”);
+     iterate(), generate() -> Used to create infinite Streams.
+
+Example:
+
+     Stream.iterate(1, x->x*2)
+
+Example:
+
+     Stream.generate(<Supplier>)
+     
+✅Numeric Streams       
+------------------
+
+Represents the primitive values in a Stream.
+
+     • IntStream
+     • LongStream
+     • DoubleStream
+
+✅Numeric Stream Ranges:
+
+Int Stream👉:
+
+IntStream.range(1,50) -> Returns an IntStream of 49 elements from 1 to 49.
+
+IntStream.rangeClosed(1,50) -> Returns an IntStream of 50 elements from 1 to 50.
+
+Long Stream👉:
+
+LongStream.range(1,50) -> Returns a LongStream of 49 elements from 1 to 49.
+
+LongStream.rangeClosed(1,50) -> Returns a LongStream of 50 elements from 1 to 50.
+
+DoubleStream👉:
+
+- It does not support the range ()and rangeClosed().
+
+✅Numeric Stream – Aggregate Functions
+-------------------------------------
+
+     • sum()
+     • max()
+     • min()
+     • average()
+
+➡️Numeric Streams : Boxing() and UnBoxing()
+----------------------------------------------
+
+Boxing()👉:
+
+• Converting a primitive type to Wrapper Class type.
+
+Example:
+
+• Converting an int (primitive) to Integer(wrapper).
+
+UnBoxing()👉:
+
+• Converting a Wrapper Class type to primitive type.
+
+Example:
+
+• Converting an Integer(wrapper) to int(primitive).
+
+➡️Numeric Streams – mapToObj(), mapToLong(), mapToDouble()
+----------------------------------------------------------
+
+• mapToObj –> Convert a each element numeric stream to some Object.
+
+• mapToLong –> Convert a numeric stream to a Long Stream.
+
+• mapToDouble –> Convert a numeric stream to a Double Stream.
+
+✅Stream Terminal Operations
+============================
+
+• Terminal Operations collects the data for you.
+
+• Terminal Operations starts the whole stream pipeline.
+
+• Terminal Operations:
+
+     • forEach()
+     • min()
+     • max()
+     • reduce()
+     • collect() and etc.
+
+➡️Terminal Operation – collect()    
+-------------------------------
+
+• The collect() method takes in an input of type Collector.
+
+• Produces the result as per the input passed to the collect() method.
+     
+➡️Terminal Operations – joining() 
+---------------------------------
+
+• joining() Collector performs the String concatenation on the elements in the stream.
+
+• joining() has three different overloaded versions.
+
+➡️Terminal Operations – counting()
+----------------------------------
+
+• counting() Collector returns the total number of elements as a result.
+
+➡️Terminal Operation – mapping()
+---------------------------------
+
+• mapping() collector applies a transformation function first and then collects the data in a collection( could be any type of collection )
+     
+➡️Terminal Operations – maxBy(), minBy() 
+----------------------------------------
+
+• Comparator as an input parameter and Optional as an output.
+
+• maxBy() : This collector is used in conjunction with comparator. Returns the max element based on the property passed to the comparator.
+
+• minBy() : This collector is used in conjunction with comparator. Returns the smallest element based on the property passed to the comparator.
+
+➡️Terminal Operations – summingInt(), averagingInt()
+----------------------------------------------------
+
+• summingInt() – this collector returns the sum as a result.
+
+• averagingInt() – this collector returns the average as a result.
+
+
+➡️Terminal Operations - groupingBy()
+------------------------------------
+
+• groupingBy() collector is equivalent to the groupBy() operation in SQL.
+
+• Used to group the elements based on a property.
+
+• The output of the groupingBy() is going to be a Map<K,V>
+
+• There are three different versions of groupingBy().
+
+     • groupingBy(classifier)
+     • groupingBy(classifier,downstream)
+     • groupingBy(classifier,supplier,downstream)
+
+➡️Terminal Operations – partitioningBy()
+-------------------------------------------
+
+• partitioningBy() collector is also a kind of groupingBy().
+
+• paritioningBy() accepts a predicate as an input.
+
+• Return type of the collector is going to be Map<K,V>
+
+• The key of the return type is going to be a Boolean.
+
+• There are two different versions of partitioningBy()
+
+     • partitioningBy(predicate)
+     • partitioningBy(predicate,downstream) // downstream -> could be of any collector
+
+✅Introduction to Parallel Streams
+===================================
+
+What is a Parallel Stream ❓ 
+
+• Splits the source of data in to multiple parts.
+
+• Process them parallelly.
+
+• Combine the result.
+
+How to Create a Parallel Stream ❓
+
+Sequential Stream:
+
+      IntStream.rangeClosed(1,1000)
+      .sum();
+      
+Parallel Stream:
+
+       IntStream.rangeClosed(1,1000)
+      .parallel()
+      .sum();
+
+How Parallel Stream works ❓
+
+• Parallel Stream uses the Fork/Join framework that got introduced in Java 7.
+
+How many Threads are created ❓
+
+• Number of threads created == number of processors available in the machine.
+
+
+![image](https://github.com/user-attachments/assets/75894d23-18d1-4d40-af29-a54e867845c1)
+
+✅Introduction to Optional
+===========================
+
+• Introduced as part of Java 8 to represent a Non-Null value.
+
+• Avoids Null Pointer Exception and Unnecessary Null Checks.
+
+• Inspired from the new languages such as scala , groovy etc.,
+
+✅Default and Static Methods in Interfaces
+============================================
+
+➡️Interfaces in Java - Prior Java 8:
+------------------------------------
+
+• Define the contract.
+
+• Only allowed to declare the method. Not allowed to implement a method in Interface.
+
+• Implementation is only allowed in the Implementation class.
+
+• Not easy for an interface to evolve.
+
+✅Default Methods – Java 8
+==========================
+
+• default keyword is used to identify a default method in an interface.
+
+Example from List Interface:
+
+     default void sort(Comparator<? super E> c) { 
+      Object[] a = this.toArray();
+      Arrays.sort(a, (Comparator) c);
+      ListIterator<E> i = this.listIterator(); 
+      for (Object e : a) {
+       i.next();
+       i.set((E) e);
+      }
+     }
+
+     
+• Prior to Java 8 we normally use Collections.sort() to perform the similar operation.
+
+• Can be overridden in the Implementation class.
+
+• Used to evolve the Interfaces in Java.
+
+✅Static Methods – Java 8
+--------------------------
+
+• Similar to default methods.
+
+• This cannot be overridden by the implementation classes.
+
+✅Abstract Classes vs Interfaces in Java 8
+------------------------------------------
+
+• Instance variables are not allowed in Interfaces.
+
+• A class can extend only one class but a class can implement multiple interfaces.
+
+Does this enable Multiple Inheritance in Java ❓ Yes ✅
+
+• This was never possible before Java 8.
+
+✅Introduction to New Date/Time Libraries
+------------------------------------------
+
+• LocalDate, LocalTime and LocalDateTime and part of the java.time package.
+
+• These new classes are created with the inspiration from the Joda-Time library.
+
+• All the new time libraries are Immutable.
+
+• Supporting classes like Instant, Duration,Period and etc.
+
+• Date, Calendar prior to Java 8.
+
+     LocalDate: Used to represent the date.
+     LocalTime: Used to represent the time.
+     LocalDateTime: Used to represent the date and time.
+
+✅Period:
+=========
+
+• Period is a date-based representation of time in Days , Months and Years and is part of the java.time package.
+
+• Compatible with LocalDate.
+
+• It represents a Period of Time not just a specific date and time.
+
+Example:
+
+     Period period1 = Period.ofDays(10); // represents a Period of 10 days
+     Period period2 = Period.ofYears(20); // represents a Period of 20 years
+
+✅Period : Use-Case
+===================
+
+• Mainly used calculate the difference between the two dates.
+
+Example:
+
+LocalDate localDate = LocalDate.of(2018,01,01);
+
+LocalDate localDate1 = LocalDate.of(2018,01,31);
+
+Period period = Period.between(localDate,localDate1); // calculates the difference between the two dates
+
+✅Duration
+===========
+
+• A time based representation of time in hours, minutes, seconds and nanoseconds.
+
+• Compatible with LocalTime and LocalDateTime.
+
+• It represents a duration of time not just a specific time. 
+
+Example:
+
+Duration duration1 = Duration.ofHours(3);; // represents the duration of 3 hours
+
+Duration duration1 = Duration. ofMinutes(3); // represents the duration of 3 minutes
+
+✅Duration : Use-Case
+======================
+
+• It can be used to calculate the difference between the time objects such as LocalTime and LocalDateTime.
+
+Example:
+
+     LocalTime localTime = LocalTime.of(7,20);
+     LocalTime localTime1 = LocalTime.of(8,20);
+     Duration duration = Duration.between(localTime,localTime1);
+
+✅Instant:
+============
+
+• Represent the time in a machine readable format.
+
+Example:
+
+Instant ins = Instant.now();
+
+- Represents the time in seconds from January 01,1970(EPOCH) to current time as a huge number.
+     
+✅Time Zones
+=============
+
+• ZonedDateTime, ZoneID, ZoneOffset.
+
+• ZonedDateTime - Represents the date/time with its time zone.
+
+Example:
+
+     2018-07-18T08:04:14.541-05:00[America/Chicago]
+     ZoneOffset-> -05:00
+     ZoneId -> America/Chicago
+
+✅DateTimeFormatter 
+====================
+
+• Introduced in Java 8 and part of the java.time.format package.
+
+• Used to parse and format the LocalDate, LocalTime and LocalDateTime.
+
+✅Parse and Format
+==================
+
+• parse - Converting a String to a LocalDate/LocalTime/LocalDateTime.
+
+• format - Converting a LocalDate/LocalTime/LocalDateTime to a String.
+     
+     
+                                                                            ✍️ By KANHA                                   
+
+
+      
+     
+     
