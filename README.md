@@ -79,11 +79,153 @@ Example:
                        .sum();
                        System.out.println("Declarative Style of Programming : " + sum1); //5050
 
-➡️Imperative vs Declarative Programming
--------------------------------------
+What is Lambda Expression❓
+-------------------------
 
-                               Example 2
-                     Removing duplicates from a list of integers
-                     
+• Lambda is equivalent to a function (method) without a name.
 
+• Lambda’s are also referred as Anonymous functions.
+
+          • Method parameters
+          • Method Body
+          • Return Type
+• Lambdas are not tied to any class like a regular method.
+
+• Lambda can also be assigned to variable and passed around.
+
+➡️Syntax of the Lambda Expression
+-------------------------------
+
+  Lambda Expression: 
+
+                  ![image](https://github.com/user-attachments/assets/410243b3-db3e-40c1-91b7-bdba0f0836ec)
+
+ ✅Usages of Lambda
+ ------------------
+
+ • Lambda is mainly used to implement Functional Interfaces(SAM).
+ 
+               @FunctionalInterface
+               public interface Comparator<T> {
+                int compare(T o1, T o2);
+               }
+               @FunctionalInterface
+               public interface Runnable {
+                public abstract void run();
+               }
+
+✅Lambda in Practice ( Things to keep in Mind)
+-------------------------------------------
+
+( ) -> Single Statement or Expression; // curly braces are not needed.
+
+( )-> { <Multiple Statements> }; // curly braces are needed for multiple statements.
+
+➡️Lambdas vs Legacy Java(until Java7)
+-----------------------------------
+
+Legacy:
+
+     Runnable runnable = new Runnable() {
+      @Override
+      public void run() {
+      System.out.println("Inside Runnable 1");
+      }
+     };
+
+Java 8:
+
+     Runnable runnableLambda = () -> {System.out.println("Inside Runnable
+     2");};     
+
+✅Functional Interfaces
+------------------------
+
+• Exists since Java 1.0 
+
+Definition:
+
+• A Functional Interface(SAM) is an interface that has exactly one abstract
+method. 
+
+@FunctionalInterface:
+
+• This annotation is introduced as part of the JDK 1.8.
+
+• Optional annotation to signify an interface as Functional Interface.
+
+✅New Functional Interfaces in Java8
+------------------------------------
+
+     • Consumer
+     • Predicate
+     • Function
+     • Supplier
+     • Consumer – BiConsumer
+     • Predicate - BiPredicate
+     • Function – BiFunction, UnaryOperator, BinaryOperator
+     • Consumer – IntConsumer, DoubleConsumer, LongConsumer
+     • Predicate – IntPredicate, BiPredicate, LongPredicate
+     • Function – IntFunction, DoubleFunction, LongFunction,IntToDoubleFunction,
+                  IntoLongFunction,DoubletoIntFunction,
+                  DoubletoLongFunction,LongtoIntFunction,
+                  LongtoDoubleFunction,ToIntFunction,
+                  ToDoubleFunction,ToLongFunction
+     • Supplier – IntSupplier, LongSupplier, DoubleSupplier, BooleanSupplier
+     
+✅Method Reference
+--------------------
+
+• Introduced as part of Java 8 and its purpose is to simplify the implementation Functional Interfaces.
+
+• Shortcut for writing the Lambda Expressions.
+
+• Refer a method in a class.
+
+➡️Syntax of Method Reference
+-----------------------------
+
+      ClassName::instance-methodName
+      ClassName::static-methodName
+      Instance::methodName
+
+ Where to use Method Reference ❓
+ -------------------------------
+
+ • Lambda expressions referring to a method directly.
+   
+   Using Lambda: 
+   
+       Function<String,String> toUpperCaseLambda = (s)->s.toUpperCase(); 
+
+   Using Method Reference:
+
+      Function<String,String> toUpperCaseMethodRefernce = String::toUpperCase;
+    
+ Where Method Reference is not Applicable ❓ 
+ ------------------------------------------
+
+ Example: 
+
+     Predicate<Student> predicateUsingLambda = (s) -> s.getGradeLevel()>=3;
+
+✅Constructor Reference  
+-----------------------
+
+• Introduced as part of Java 1.8
+
+Syntax:
+
+    Classname::new
+
+Example: 
+
+    Supplier<Student> studentSupplier = Student::new; 
+
+Invalid: 
+
+    Student student = Student::new; // compilation issue
+
+    
+    
 
