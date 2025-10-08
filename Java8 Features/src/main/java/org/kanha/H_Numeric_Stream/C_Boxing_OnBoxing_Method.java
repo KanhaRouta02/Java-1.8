@@ -1,6 +1,5 @@
 package org.kanha.H_Numeric_Stream;
 
-import javax.jnlp.IntegrationService;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
